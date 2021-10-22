@@ -1,0 +1,27 @@
+[
+  {
+    "className": "my-custom-row-class my-custom-row-class--first-row",
+    "content": [
+      {
+        "className": "my-custom-item-class",
+        "style": {
+          "display": "inline-block"
+        },
+        "tag": "span",
+        "content": "Row 1: Item 1"
+      },
+      {
+        "className": "my-custom-item-class",
+        "style": {
+          "display": "inline-block"
+        },
+        "tag": "span",
+        "content": "Row 1: Item 2"
+      }
+    ]
+  },
+  {
+    "className": "my-custom-row-class",
+    "content": "Row 2: Item 1"
+  }
+]

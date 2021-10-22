@@ -1,0 +1,197 @@
+& when (@form-enabled) {
+
+  .form {
+
+    .row {
+
+      &:last-child {
+
+        .form-group {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  /* Form Control Group */
+  .form-control-group {
+
+    &.filter-input-text-group {
+      width: auto;
+
+      // Hide native clear button in IE10+
+      ::-ms-clear {
+        display: none;
+      }
+
+      .form-control-group-add-on-prepend {
+
+        .icon {
+          opacity: 0.2;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+
+      .form-control-group-add-on-append {
+
+        &.hidden {
+          display: table-cell !important;
+          opacity: 0;
+        }
+
+        a {
+
+          .icon {
+            opacity: 0.2;
+
+            &:hover {
+              opacity: 0.6;
+            }
+
+            &:active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Inline Form Elements */
+  .form-element-inline {
+    appearance: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    display: flex;
+    height: auto;
+    padding: @base-spacing-unit * 1/4 0;
+
+    .form-element-inline-text {
+      flex: 0 1 auto;
+      min-width: @base-spacing-unit;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .form-element-inline-icon {
+      display: inline-block;
+      fill: @form-control-border-color;
+      flex: 1 0 16px;
+      margin-left: @base-spacing-unit * 1/2;
+      opacity: 0;
+      transition: opacity 0.25s;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      border: none;
+      border-bottom: 1px solid transparent;
+
+      .form-element-inline-icon {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      background: transparent;
+    }
+  }
+
+  .form-row-edit {
+
+    .form-element-inline {
+      border-bottom: 1px solid @form-control-border-color;
+      border-radius: 0;
+    }
+  }
+
+  /* 'Textarea' Form Elements: A div with attribute contenteditable='true' */
+  .content-editable-wrapper {
+    position: relative;
+  }
+
+  .content-editable {
+    display: block;
+    height: auto;
+    left: 0;
+    max-height: 100%;
+    outline: none;
+    overflow: auto;
+    padding-bottom: 0.35rem;
+    padding-top: 0.35rem;
+    position: absolute;
+    top: 0;
+    white-space: pre-wrap;
+    width: 100%;
+    word-wrap: break-word;
+
+    // Remove any rich-text styling that might be introduced by a user pasting
+    // rich-text content or using rich-text keyboard shortcuts.
+    * {
+      background: none !important;
+      border: none !important;
+      color: inherit !important;
+      font: inherit !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      text-decoration: inherit !important;
+      text-shadow: inherit !important;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .form-group {
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  .form-control-toggle-custom {
+    min-height: @toggle-custom-height;
+  }
+}
+
+& when (@form-enabled) and (@layout-screen-small-enabled) {
+
+  @media (min-width: @layout-screen-small-min-width) {
+    /* Form Control Group */
+    .form-control-group {
+
+      &.filter-input-text-group {
+        width: 100px;
+      }
+    }
+  }
+}
+
+& when (@form-enabled) and (@layout-screen-medium-enabled) {
+
+  @media (min-width: @layout-screen-medium-min-width) {
+    /* Form Control Group */
+    .form-control-group {
+
+      &.filter-input-text-group {
+        width: 200px;
+      }
+    }
+  }
+}
+
+& when (@form-enabled) and (@layout-screen-large-enabled) {
+
+  @media (min-width: @layout-screen-large-min-width) {
+
+    .form-control-toggle-custom {
+      min-height: @toggle-custom-height-screen-large;
+    }
+  }
+}
